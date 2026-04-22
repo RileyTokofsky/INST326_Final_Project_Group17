@@ -18,4 +18,5 @@ An annotated bibliography of all sources you used to develop your project, inclu
 For the main rules and different side bets rules, we utilized Winstar: Bicycle. (2025). Blackjack. Bicyclecards.com. https://bicyclecards.com/how-to-play/blackjack
 
 To help us choose what game to implement, we used Bicyclecards: Blackjack Side Bets Guide: How They Work and Which Are Worth It. (2025, November 5). WinStar World Casino and Resort. https://www.winstar.com/blog/blackjack-side-bets-guide-how-they-work-and-which-are-worth-it/
-x
+
+test
