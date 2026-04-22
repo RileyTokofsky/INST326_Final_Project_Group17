@@ -1,0 +1,3 @@
+A description of the game.
+A description of the purpose of each file in your repository.
+An annotated bibliography of all sources you used to develop your project, including sources of data, sources of background information about your project topic, and sources about Python programming that informed specific aspects of your code. For each source, explain how you used the source. You do not need to cite any INST326 course materials.
