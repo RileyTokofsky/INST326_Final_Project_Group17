@@ -25,7 +25,6 @@ class Deck:
     def deal_card(self):
         if len(self.cards) == 0:
             raise ValueError("No cards left in deck")
-
         card = self.cards.pop()
         self.update_percent_used()
         return card
