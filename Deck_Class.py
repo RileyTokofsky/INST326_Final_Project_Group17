@@ -21,4 +21,19 @@ class Deck:
                     
     def shuffle(self):
         random.shuffle(self.cards)
-    
+ 
+    def deal_card(self):
+        if len(self.cards) == 0:
+            raise ValueError("No cards left in deck")
+
+        card = self.cards.pop()
+        self.update_percent_used()
+        return card
+
+    def cards_left_in_deck(self):
+        return len(self.cards)
+
+    def update_percent_used(self):
+        total_cards = 52 * self.num_decks
+        used_cards = total_cards - len(self.cards)
+        self.percent_of_deck_used = used_cards / total_cards
