@@ -14,6 +14,8 @@ Player_Class: Represents the player in the game. This class manages the playerâ€
 
 
 Annotated bibliography:
-This source was used to understand the official rules of Blackjack, including player actions such as hit, stand, and double down. It helped guide the logic implemented in the Player and Dealer classes: Bicycle. (2025). Blackjack. Bicyclecards.com. https://bicyclecards.com/how-to-play/blackjack
+This source was used to understand the official rules of Blackjack, including player actions such as hit, stand, and double down. It helped guide the logic implemented in the Player and Dealer classes: 
+Bicycle. (2025). Blackjack. Bicyclecards.com. https://bicyclecards.com/how-to-play/blackjack
 
-This source helped with understanding how to structure classes in Python, which was needed for implementing the Card, Deck, Player, and Dealer classes.: How They Work and Which Are Worth It. (2025, November 5). WinStar World Casino and Resort. https://www.winstar.com/blog/blackjack-side-bets-guide-how-they-work-and-which-are-worth-it/
+This source helped with understanding how to structure classes in Python, which was needed for implementing the Card, Deck, Player, and Dealer classes.: 
+How They Work and Which Are Worth It. (2025, November 5). WinStar World Casino and Resort. https://www.winstar.com/blog/blackjack-side-bets-guide-how-they-work-and-which-are-worth-it/
