@@ -1,6 +1,13 @@
 class Dealer:
     
     def __init__(self):
+        """
+        Purpose: Initialize a Dealer object with an empty hand
+
+        Args: N/A
+
+        Returns: N/A
+        """
         self.hand = []
     
     def deal_to_self(self, deck):
