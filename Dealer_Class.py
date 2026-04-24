@@ -12,7 +12,7 @@ class Dealer:
             return [(card.rank, card.suit) for card in self.hand]
         else:
             if len(self.hand) > 0:
-                return [("Hidden", ""), (self.hand[1].rank, self.hand[1].suit)]
+                return [("Hidden"), (self.hand[1].rank, self.hand[1].suit)]
             return []
     
     def get_hand_value(self):
