@@ -15,6 +15,8 @@ class Player:
 
         Returns:
             None
+        
+        Author: Adikari
         """
         self.name = name
         self.wallet = wallet
@@ -31,6 +33,8 @@ class Player:
 
         Returns:
             True if bet is successful, False otherwise
+        
+        Author: Adikari
         """
         if amount > self.wallet:
             return False
@@ -47,6 +51,8 @@ class Player:
 
         Returns:
             None
+        
+        Author: Adikari
         """
         card = deck.deal_card()
         self.hand.append(card)
@@ -60,6 +66,8 @@ class Player:
 
         Returns:
             None
+        
+        Author: Adikari
         """
         pass
     
@@ -72,6 +80,8 @@ class Player:
 
         Returns:
             None
+        
+        Author: Adikari
         """
         #1 Check if player has two cards
         #2 Check if both cards are the same rank
