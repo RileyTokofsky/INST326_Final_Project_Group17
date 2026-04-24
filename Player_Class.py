@@ -26,7 +26,6 @@ class Player:
     def place_bet(self, amount):
         """
         Places a bet for the player.
-        Deducts money from the player's wallet and records the bet.
 
         Args:
             amount (int): The amount to bet
@@ -76,7 +75,7 @@ class Player:
         Splitting a hand.
 
         Args:
-            deck (Deck): Deck object
+            None
 
         Returns:
             None
