@@ -40,7 +40,6 @@ class Deck:
         shuffles the deck of cards
 
         done by: Riley Tokofsky
-        Technique: N/A
         """
         random.shuffle(self.cards)
  
@@ -52,7 +51,6 @@ class Deck:
             card: card that was dealt
 
         done by: Riley Tokofsky
-        Technique: N/A
         """
         if len(self.cards) == 0:
             raise ValueError("No cards left in deck")
