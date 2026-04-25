@@ -3,18 +3,22 @@ class Dealer:
     def __init__(self):
         """
         Purpose: Initialize a Dealer object with an empty hand
-
-        Args: N/A
-
-        Returns: N/A
+        
+        author: Sophia
         """
         self.hand = []
     
     def deal_to_self(self, deck):
+        """
+        author: Sophia
+        """
         card = deck.deal_card()
         self.hand.append(card)
     
     def show_hand(self, reveal_all=False):
+        """
+        author: Sophia
+        """
         if reveal_all:
             return [(card.rank, card.suit) for card in self.hand]
         else:
@@ -23,6 +27,9 @@ class Dealer:
             return []
     
     def get_hand_value(self):
+        """
+        author: Sophia
+        """
         total = 0
         aces = 0
         
@@ -37,6 +44,9 @@ class Dealer:
         return total
     
     def play_turn(self, deck):
+        """
+        author: Sophia
+        """
         while self.get_hand_value() < 17:
             self.deal_to_self(deck)
     
