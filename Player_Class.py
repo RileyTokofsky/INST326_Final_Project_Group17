@@ -83,7 +83,7 @@ class Player:
         Author: Adikari
         """
         if(len(self.hand) == 2):
-            if self.hand[0].get_value() == self.hand[1].get_value()):
+            if self.hand[0].get_value() == self.hand[1].get_value():
                 if(self):
                     #Code to test if you have enough money in your wallet to
                     #support 2 bets of the predetermined bet size
