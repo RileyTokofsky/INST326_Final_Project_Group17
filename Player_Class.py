@@ -70,7 +70,7 @@ class Player:
         """
         pass
     
-    def split(self, deck):
+    def split(self, hand):
         """
         Splitting a hand.
 
@@ -82,6 +82,18 @@ class Player:
         
         Author: Adikari
         """
+        if(len(self.hand) == 2):
+            if self.hand[0].get_value() == self.hand[1].get_value()):
+                if(self):
+                    #Code to test if you have enough money in your wallet to
+                    #support 2 bets of the predetermined bet size
+                    pass
+                else:
+                    print("You don't have enough money in your wallet to split")
+            else:
+                print("Your cards need to have the same rank to split")
+        else:
+            print("splitting failed, you need 2 cards in your hand exactly to split")
         #1 Check if player has two cards
         #2 Check if both cards are the same rank
         #3 Check if player has enough money to split
@@ -89,3 +101,11 @@ class Player:
         #5 Deal one new card to each hand
         #6 Return or store the new hands
         pass
+    
+    def double_down(self, hand):
+        
+        pass
+    
+    def insure(self, hand):
+        pass
+    
