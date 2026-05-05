@@ -27,8 +27,8 @@ def main():
         for player in players:
             wager = input(f"{player.name}, you have ${player.wallet}.  "
                           "How much money do you want to bet?\n")
-            player.place_bet(wager)
-            player.wallet -= wager
+            player.place_bet(int(wager))
+            player.wallet -= int(wager)
 #everyone must bet
     #Ask for optional pre bet
         for player in players:
