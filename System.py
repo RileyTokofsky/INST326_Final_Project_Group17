@@ -81,4 +81,4 @@ def main(self):
     print("Thank You for playing!")
     
 if __name__ == "__main__":
-    main()
+    main(self)
