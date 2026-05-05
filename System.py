@@ -4,7 +4,7 @@ from Deck_Class import Deck
 from Player_Class import Player
 
 
-def main(self):
+def main():
 #Ask how many players are playing using input()
 #   error handling later
     people = input("how many player are playing today?\n")
