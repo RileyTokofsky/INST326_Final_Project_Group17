@@ -39,21 +39,6 @@ class Card:
             return NotImplemented
         return self.get_value()+other.get_value()
     
-    @value.setter
-    def set_value(self, value):
-        """
-        Sets a card's value to the passed in value
-
-        Args:
-            value (int): value that you want to set the card to
-            
-        Returns:
-            None
-        
-        Author: Michael
-        """
-        self.value = value
-    
     def value_converter(self):
         """
         calculates a new card's value based off its rank
