@@ -16,7 +16,7 @@ def main():
         response = input("tell us your name and how much money you brought to"
                          " the table in the format of [name,money]\n")
         response = response.split(",")
-        players.append(Player(response[0].lower().strip(" "), int(response[1]).strip(" ")))
+        players.append(Player(response[0].lower().strip(" "), int(response[1].strip(" "))))
         num+=1
 #Start loop for game until each player says end when asked to bet
     #error handling with not enough money
