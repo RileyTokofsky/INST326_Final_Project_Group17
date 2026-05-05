@@ -52,7 +52,7 @@ def main():
                     print(player.hand_description(player.hand))
                     response = input(f"{player.name}, do you want to hit or stand?"
                                     "  Respond with [hit] or [stand]\n")
-                    if response.lower=="hit":
+                    if response.lower()=="hit":
                         player.hit(deck)
                     elif player.get_hand_value(player.hand) == 21:
                         print("You got 21, your turn is over\n")
