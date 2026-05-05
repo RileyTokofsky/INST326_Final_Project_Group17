@@ -54,7 +54,7 @@ def main():
                                     "  Respond with [hit] or [stand]\n")
                     if response.lower=="hit":
                         player.hit(deck)
-                    if player.get_hand_value(player.hand) == 21:
+                    elif player.get_hand_value(player.hand) == 21:
                         print("You got 21, your turn is over\n")
                     elif player.get_hand_value(player.hand) > 21:
                         print("You busted\n")
