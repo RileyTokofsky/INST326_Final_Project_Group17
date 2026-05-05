@@ -65,7 +65,7 @@ def main():
 #Dealer compares their hand to players and decides who wins and side bets
     #Side Bet implementation
         for player in players:
-            bet = self.bets[0]
+            bet = player.bets[0]
             bet.resolve(player.decide(player.hand, dealer))
             print(f"{player.name} got a {bet.result}!  Your old balance was "
                   f"{player.wallet+bet.value}.  Your new balance is "
