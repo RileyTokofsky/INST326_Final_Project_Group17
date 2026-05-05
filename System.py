@@ -48,7 +48,7 @@ def main():
                 print("Blackjack!\n")
             else:
                 response = ""
-                while player.get_hand_value(player.hand) <21 or response.lower() != "stand":
+                while player.get_hand_value(player.hand) < 21 and response.lower() != "stand":
                     print(player.hand_description(player.hand))
                     response = input(f"{player.name}, do you want to hit or stand?"
                                     "  Respond with [hit] or [stand]\n")
