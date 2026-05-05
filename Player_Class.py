@@ -56,6 +56,13 @@ class Player:
             aces -= 1
         return total
     
+    def hand_description(self, hand):
+        description = f"{self.name} has a "
+        for card in hand:
+            description+= f"{card} and "
+            description = description[:-4] + f"\nThe total value is {self.get_hand_value()} points!\n"
+        return description
+    
     def hit(self, deck):
         """
         Adds a card to the player's hand.
