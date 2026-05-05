@@ -38,7 +38,7 @@ class Player:
         if amount > self.wallet:
             return False
         self.wallet -= amount
-        self.bets.append(amount)
+        self.bets.append(StandardBet(amount)
         return True
     
     def hit(self, deck):
