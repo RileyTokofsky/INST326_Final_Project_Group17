@@ -131,3 +131,28 @@ class Player:
     def insure(self, hand):
         pass
     
+    def decide(self, arg_hand, dealer: Dealer) -> str:
+        if self.get_hand_value(arg_hand) > 21:
+            return "bust"
+    #21 point tie rules
+        elif (self.get_hand_value(arg_hand) == 21 and len(arg_hand) == 2
+            and dealer.get_hand_value() == 21 and len(dealer.hand) == 2):
+            return "push"
+        elif (self.get_hand_value(arg_hand) == 21 and len(arg_hand) != 2
+            and dealer.get_hand_value() == 21 and len(dealer.hand)!= 2):
+            return "push"
+        elif (self.get_hand_value(arg_hand) == 21 and len(arg_hand) == 2
+            and dealer.get_hand_value() == 21 and len(dealer.hand) != 2):
+            return "win"
+        elif (self.get_hand_value(arg_hand) == 21 and len(arg_hand) != 2
+            and dealer.get_hand_value() == 21 and len(dealer.hand)== 2):
+            return "loss"
+    #Other rules
+        elif self.get_hand_value(arg_hand) < 21 and dealer.get_hand_value() > 21:
+            return "win"
+        elif self.get_hand_value(arg_hand) < dealer.get_hand_value():
+            return "loss"
+        elif self.get_hand_value(arg_hand) > dealer.get_hand_value():
+            return "win"
+        elif self.get_hand_value(arg_hand) == dealer.get_hand_value():
+            return "push"
