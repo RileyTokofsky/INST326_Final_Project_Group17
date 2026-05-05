@@ -1,5 +1,7 @@
 import random
 
+from Card_Class import Card
+
 class Deck:
     """
     represents the decks of cards used in blackjack

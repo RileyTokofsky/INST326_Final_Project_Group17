@@ -1,4 +1,9 @@
 #---------------------------WORKFLOW-------------------------------------------
+from Dealer_Class import Dealer
+from Deck_Class import Deck
+from Player_Class import Player
+
+
 def main(self):
 #Ask how many players are playing using input()
 #   error handling later

@@ -89,4 +89,4 @@ class Card:
         return self.value
     
     def __str__(self):
-        return f"{rank} of {suit}"
+        return f"{self.rank} of {self.suit}"

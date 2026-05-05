@@ -1,3 +1,7 @@
+from Bet import StandardBet
+from Dealer_Class import Dealer
+
+
 class Player:
     """
     Represents the player in a game of Blackjack who must bet.
