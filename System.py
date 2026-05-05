@@ -35,7 +35,7 @@ def main():
 #dealer deals everyone 2 cards
             player.hand.append(deck.deal_card())
             player.hand.append(deck.deal_card())
-            print(player.hand_description(player.hand))
+            print(f"\n\n{player.hand_description(player.hand)}")
 #dealer deals himself 1 card
         dealer.deal_to_self(deck)
         print(f"The dealer has a {dealer.hand[0]}\n")
@@ -44,19 +44,19 @@ def main():
     #splitting later
     #insurance later
         for player in players:
-            if player.get_hand_value() == 21:
+            if player.get_hand_value(player.hand) == 21:
                 print("Blackjack!\n")
             else:
                 response = ""
-                while player.get_hand_value <=21 or response.lower() == "stand":
+                while player.get_hand_value(player.hand) <=21 or response.lower() == "stand":
                     print(player.hand_description(player.hand))
                     response = input(f"{player.name}, do you want to hit or stand?"
                                     "  Respond with [hit] or [stand]\n")
                     if response.lower=="hit":
                         player.hit(deck)
-                    if player.get_hand_value() == 21:
+                    if player.get_hand_value(player.hand) == 21:
                         print("You got 21, your turn is over\n")
-                    elif player.get_hand_value() > 21:
+                    elif player.get_hand_value(player.hand) > 21:
                         print("You busted\n")
             print(f"Final hand: {player.hand_description(player.hand)}\n")    
 #dealer deals themself cards until total value >=17

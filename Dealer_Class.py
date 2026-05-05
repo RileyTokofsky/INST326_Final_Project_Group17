@@ -48,7 +48,7 @@ class Dealer:
         description = f"The house has a "
         for card in self.hand:
             description+= f"{card} and "
-            description = description[:-4] + f"\nThe total value is {self.get_hand_value()} points!\n"
+        description = description[:-4] + f"\nThe total value is {self.get_hand_value()} points!\n"
         return description
     
     def play_turn(self, deck):

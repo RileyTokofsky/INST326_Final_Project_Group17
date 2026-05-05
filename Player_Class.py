@@ -64,7 +64,7 @@ class Player:
         description = f"{self.name} has a "
         for card in hand:
             description+= f"{card} and "
-            description = description[:-4] + f"\nThe total value is {self.get_hand_value(hand)} points!\n"
+        description = description[:-4] + f"\nThe total value is {self.get_hand_value(hand)} points!\n"
         return description
     
     def hit(self, deck):
