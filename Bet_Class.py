@@ -1,0 +1,34 @@
+from abc import ABC, abstractmethod
+
+class Bet(ABC):
+    """
+    done by: Riley Tokofsky
+    """
+    def __init__(self, value):
+        self.value = value
+        self.result = None
+
+    @abstractmethod
+    def resolve(self, outcome):
+        pass
+
+    @abstractmethod
+    def payout(self):
+        pass
+
+    def __str__(self):
+        return f"Bet: ${self.value}, Result: {self.result}"
+
+
+class StandardBet(Bet):
+    def resolve(self, outcome):
+        self.result = outcome
+
+    def payout(self):
+        if self.result == "blackjack":
+            return int(self.value * 2.5)
+        if self.result == "win":
+            return self.value * 2
+        if self.result == "push":
+            return self.value
+        return 0
