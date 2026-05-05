@@ -37,7 +37,7 @@ def main():
             player.hand.append(deck.deal_card())
             print(player.hand_description(player.hand))
 #dealer deals himself 1 card
-        dealer.deal_to__self(deck)
+        dealer.deal_to_self(deck)
         print(f"The dealer has a {dealer.hand[0]}\n")
 #Dealer asks each player to hit or stand, looping until they say stand or bust
     #error handling later
