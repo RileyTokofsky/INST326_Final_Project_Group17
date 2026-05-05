@@ -7,12 +7,12 @@ from Player_Class import Player
 def main():
 #Ask how many players are playing using input()
 #   error handling later
-    people = input("how many player are playing today?\n")
+    people = int(input("how many player are playing today?\n"))
     num = 0
     players = []
 #Loop up to number of players to create player objects
     #error handling later
-    while num > people:
+    while num < people:
         response = input("tell us your name and how much money you brought to"
                          " the table in the format of [name,money]\n")
         response = response.split(",")
