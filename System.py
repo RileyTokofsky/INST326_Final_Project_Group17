@@ -79,3 +79,6 @@ def main(self):
                 players = [one for one in players if one.name != player.name]
 #Thank you
     print("Thank You for playing!")
+    
+if __name__ == "__main__":
+    main()
