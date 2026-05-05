@@ -147,11 +147,14 @@ class Player:
             return "push"
         elif (self.get_hand_value(arg_hand) == 21 and len(arg_hand) == 2
             and dealer.get_hand_value() == 21 and len(dealer.hand) != 2):
-            return "win"
+            return "blackjack"
         elif (self.get_hand_value(arg_hand) == 21 and len(arg_hand) != 2
             and dealer.get_hand_value() == 21 and len(dealer.hand)== 2):
             return "loss"
     #Other rules
+        elif (self.get_hand_value(arg_hand) == 21 and len(arg_hand) == 2
+            and dealer.get_hand_value() != 21):
+            return "blackjack"
         elif self.get_hand_value(arg_hand) < 21 and dealer.get_hand_value() > 21:
             return "win"
         elif self.get_hand_value(arg_hand) < dealer.get_hand_value():
