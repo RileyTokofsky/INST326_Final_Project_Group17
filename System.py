@@ -62,8 +62,8 @@ def main(self):
         for player in players:
             bet = self.bets[0]
             bet.resolve(player.decide(player.hand, dealer))
-            print(f"{player.name} got a {bet.result}!  Their old balance was "
-                  f"{player.wallet+bet.value}.  Their new balance is "
+            print(f"{player.name} got a {bet.result}!  Your old balance was "
+                  f"{player.wallet+bet.value}.  Your new balance is "
                   f"{player.wallet+bet.payout()}\n")
             player.wallet+=bet.payout()
 #Ask which players want to keep playing
