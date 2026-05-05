@@ -87,3 +87,6 @@ class Card:
         Author: Michael
         """
         return self.value
+    
+    def __str__(self):
+        return f"{rank} of {suit}"

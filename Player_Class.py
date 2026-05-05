@@ -20,6 +20,7 @@ class Player:
         """
         self.name = name
         self.wallet = wallet
+        #might need to later implement having multiple hands for splitting
         self.hand = []
         self.bets = []
     
@@ -40,6 +41,20 @@ class Player:
         self.wallet -= amount
         self.bets.append(StandardBet(amount))
         return True
+    
+    def get_hand_value(self, hand):
+        total = 0
+        aces = 0
+        
+        for card in hand:
+            total += card.get_value()
+            if card.rank.lower() == "ace":
+                aces += 1
+        
+        while total > 21 and aces > 0:
+            total -= 10
+            aces -= 1
+        return total
     
     def hit(self, deck):
         """
