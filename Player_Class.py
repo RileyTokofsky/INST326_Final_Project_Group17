@@ -106,7 +106,7 @@ class Player:
         Returns:
             None
         
-        Author: Adikari
+        Author: Michael
         """
         if(len(self.hand) == 2):
             if self.hand[0].get_value() == self.hand[1].get_value():
