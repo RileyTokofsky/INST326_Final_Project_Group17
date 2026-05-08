@@ -96,11 +96,9 @@ class Player:
         """
         pass
     
-    
     def double_down(self, bet):
         bet.value*= 2
         self.wallet-= bet.value
-        
     
     def insure(self, hand):
         pass

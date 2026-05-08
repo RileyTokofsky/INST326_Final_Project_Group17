@@ -24,6 +24,7 @@ def main():
     dealer = Dealer()
     deck = Deck()
     while len(players) > 0:
+        player.bets = []
         for player in players:
             player.hand = []
             wager = input(f"{player.name}, you have ${player.wallet}.  "
@@ -48,12 +49,16 @@ def main():
                 print("Blackjack!\n")
             else:
                 response = ""
-                while player.get_hand_value(player.hand) < 21 and response.lower() != "stand":
+                while player.get_hand_value(player.hand) < 21 and response.lower() != "stand" and response.lower() != "double down":
                     print(player.hand_description(player.hand))
-                    response = input(f"{player.name}, do you want to hit or stand?"
+                    response = input(f"{player.name}, do you want to hit, stand, or double down?"
                                     "  Respond with [hit] or [stand]\n")
                     if response.lower()=="hit":
                         player.hit(deck)
+                    elif response.lower() == "double down":
+                        player.hit(deck)
+                        player.double_down(player.bets[0])
+                        print("you doubled your bet size!")
                     elif player.get_hand_value(player.hand) == 21:
                         print("You got 21, your turn is over\n")
                     elif player.get_hand_value(player.hand) > 21:
