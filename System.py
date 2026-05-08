@@ -24,9 +24,9 @@ def main():
     dealer = Dealer()
     deck = Deck()
     while len(players) > 0:
-        player.bets = []
         for player in players:
             player.hand = []
+            player.bets = []
             wager = input(f"{player.name}, you have ${player.wallet}.  "
                           "How much money do you want to bet?\n")
             player.place_bet(int(wager))
