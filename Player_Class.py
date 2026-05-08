@@ -25,7 +25,7 @@ class Player:
         self.name = name
         self.wallet = wallet
         #might need to later implement having multiple hands for splitting
-        self.hands = [[],[],[],[]]
+        self.hand = []
         self.bets = []
     
     def place_bet(self, amount):
@@ -67,7 +67,7 @@ class Player:
         description = description[:-4] + f"\nThe total value is {self.get_hand_value(hand)} points!\n"
         return description
     
-    def hit(self, deck, hand):
+    def hit(self, deck):
         """
         Adds a card to the player's hand.
 
@@ -80,7 +80,7 @@ class Player:
         Author: Adikari
         """
         card = deck.deal_card()
-        hand.append(card)
+        self.hand.append(card)
     
     def stand(self):
         """
@@ -106,10 +106,10 @@ class Player:
         Returns:
             None
         
-        Author: Michael
+        Author: Adikari
         """
-        if(len(hand) == 2):
-            if hand[0].get_value() == hand[1].get_value():
+        if(len(self.hand) == 2):
+            if self.hand[0].get_value() == self.hand[1].get_value():
                 if(self):
                     #Code to test if you have enough money in your wallet to
                     #support 2 bets of the predetermined bet size
