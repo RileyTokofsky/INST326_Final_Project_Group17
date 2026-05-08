@@ -24,7 +24,6 @@ class Player:
         """
         self.name = name
         self.wallet = wallet
-        #might need to later implement having multiple hands for splitting
         self.hand = []
         self.bets = []
     
