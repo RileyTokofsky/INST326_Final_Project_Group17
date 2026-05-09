@@ -37,16 +37,16 @@ def main():
             response = input("Any sidebets?"
             "  Respond with [Perfect Pairs] or [Mixed Pairs] or [Colored Pairs]\n")
             if response.lower()=="perfect pairs":
-                response = int(input("how much?\n"))
-                player.place_pair_bet(response, "pp")
+                value = int(input("how much?\n"))
+                player.place_pair_bet(value, "pp")
                 
             elif response.lower() == "mixed pairs":
-                response = int(input("how much?\n"))
-                player.place_pair_bet(response, "mp")
+                value = int(input("how much?\n"))
+                player.place_pair_bet(value, "mp")
                 
             elif response.lower() == "colored pairs":
-                response = int(input("how much?\n"))
-                player.place_pair_bet(response, "cp")
+                value = int(input("how much?\n"))
+                player.place_pair_bet(value, "cp")
                 
             player.hand.append(deck.deal_card())
             player.hand.append(deck.deal_card())
