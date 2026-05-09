@@ -36,15 +36,15 @@ def main():
     #error handling
             response = input("Any sidebets?"
             "  Respond with [pp] for Perfect Pairs or [mp] for Mixed Pairs or [cp] for Colored Pairs\n")
-            if response.lower()=="perfect pairs":
+            if response.lower()=="pp":
                 value = int(input("how much?\n"))
                 player.place_pair_bet(value, "pp")
                 
-            elif response.lower() == "mixed pairs":
+            elif response.lower() == "mp":
                 value = int(input("how much?\n"))
                 player.place_pair_bet(value, "mp")
                 
-            elif response.lower() == "colored pairs":
+            elif response.lower() == "cp":
                 value = int(input("how much?\n"))
                 player.place_pair_bet(value, "cp")
                 
