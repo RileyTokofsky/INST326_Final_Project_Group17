@@ -88,7 +88,10 @@ def main():
                 bet2 = player.bets[1]
                 bet2.resolve(player.decidePair(player.hand, bet2.type))
                 player.wallet += bet2.payout()
-                print("Your Pair bet won!\n")
+                if bet2.payout() != 0:
+                    print("Your Pair bet won!\n")
+                else:
+                    print("Your Pair bet lost\n")
             
             bet = player.bets[0]
             bet.resolve(player.decide(player.hand, dealer))
