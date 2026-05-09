@@ -84,7 +84,7 @@ def main():
 #Dealer compares their hand to players and decides who wins and side bets
     #Side Bet implementation
         for player in players:
-            if len(player.bets > 1):
+            if len(player.bets) >1:
                 bet2 = player.bets[1]
                 bet2.resolve(player.decidePair(player.hand, bet2.type))
                 player.wallet += bet2.payout()
