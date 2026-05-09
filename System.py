@@ -2,7 +2,7 @@
 from Dealer_Class import Dealer
 from Deck_Class import Deck
 from Player_Class import Player
-
+from Bet import StandardBet, Pairs
 
 def main():
 #Ask how many players are playing using input()
@@ -29,11 +29,24 @@ def main():
             player.bets = []
             wager = input(f"{player.name}, you have ${player.wallet}.  "
                           "How much money do you want to bet?\n")
-            player.place_bet(int(wager))
+            player.place_bet(int(wager), StandardBet)
 #everyone must bet
     #Ask for optional pre bet
         for player in players:
 #dealer deals everyone 2 cards
+            response = input("Any sidebets?"
+            "  Respond with [Perfect Pairs] or [Mixed Pairs] or [Colored Pairs]\n")
+            if response.lower()=="perfect pairs":
+                response.lower = input("how much?\n")
+                player.bets.append(Pairs(int(response), "pp"))
+            elif response.lower() == "mixed pairs":
+                response.lower = input("how much?\n")
+                player.bets.append(Pairs(int(response), "mp"))
+                print("you doubled your bet size!\n")
+            elif response.lower() == "colored pairs":
+                response.lower = input("how much?\n")
+                player.bets.append(Pairs(int(response), "cp"))
+                print("you doubled your bet size!\n")
             player.hand.append(deck.deal_card())
             player.hand.append(deck.deal_card())
             print(f"\n\n{player.hand_description(player.hand)}")
@@ -52,13 +65,13 @@ def main():
                 while player.get_hand_value(player.hand) < 21 and response.lower() != "stand" and response.lower() != "double down":
                     print(player.hand_description(player.hand))
                     response = input(f"{player.name}, do you want to hit, stand, or double down?"
-                                    "  Respond with [hit] or [stand]\n")
+                                    "  Respond with [hit] or [stand] or [double down]\n")
                     if response.lower()=="hit":
                         player.hit(deck)
                     elif response.lower() == "double down":
                         player.hit(deck)
                         player.double_down(player.bets[0])
-                        print("you doubled your bet size!")
+                        print("you doubled your bet size!\n")
                     elif player.get_hand_value(player.hand) == 21:
                         print("You got 21, your turn is over\n")
                     elif player.get_hand_value(player.hand) > 21:

@@ -32,3 +32,17 @@ class StandardBet(Bet):
         if self.result == "push":
             return self.value
         return 0
+    
+class Pairs(Bet):
+    def __init__(self, value, type):
+        super.__init__(value)
+        self.type = type
+        
+    def resolve(self, outcome):
+        self.result = outcome
+
+    def payout(self):
+        if self.result == "win":
+            return int(self.value * 2.5)
+        else:
+            return 0

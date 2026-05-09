@@ -27,7 +27,7 @@ class Player:
         self.hand = []
         self.bets = []
     
-    def place_bet(self, amount):
+    def place_bet(self, amount, type):
         """
         Places a bet for the player.
 
@@ -42,7 +42,7 @@ class Player:
         if amount > self.wallet:
             return False
         self.wallet -= amount
-        self.bets.append(StandardBet(amount))
+        self.bets.append(type(amount))
         return True
     
     def get_hand_value(self, hand):
