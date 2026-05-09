@@ -39,14 +39,15 @@ def main():
             if response.lower()=="perfect pairs":
                 response.lower = input("how much?\n")
                 player.bets.append(Pairs(int(response), "pp"))
+                
             elif response.lower() == "mixed pairs":
                 response.lower = input("how much?\n")
                 player.bets.append(Pairs(int(response), "mp"))
-                print("you doubled your bet size!\n")
+                
             elif response.lower() == "colored pairs":
                 response.lower = input("how much?\n")
                 player.bets.append(Pairs(int(response), "cp"))
-                print("you doubled your bet size!\n")
+                
             player.hand.append(deck.deal_card())
             player.hand.append(deck.deal_card())
             print(f"\n\n{player.hand_description(player.hand)}")
