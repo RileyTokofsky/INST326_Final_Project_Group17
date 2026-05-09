@@ -133,7 +133,10 @@ class Player:
             return "push"
         
     def decidePair(self, arg_hand, type) -> str:
-        if (self.arg_hand[0]  and len(arg_hand) == 2
-            and dealer.get_hand_value() == 21 and len(dealer.hand) == 2):
-            return "push"
-       
+        if (self.arg_hand[0].rank == self.arg_hand[1].rank and 
+            self.arg_hand[0].suit == self.arg_hand[1].suit and type == "pp"):
+            return "win"
+        elif (self.arg_hand[0].rank == self.arg_hand[1].rank and 
+            (self.arg_hand[0].suit == "spa"self.arg_hand[1].suit) and type == "mp"):
+            return "win"
+        else: return "lose"
