@@ -35,7 +35,7 @@ class StandardBet(Bet):
     
 class Pairs(Bet):
     def __init__(self, value, type):
-        super.__init__(value)
+        super().__init__(value)
         self.type = type
         
     def resolve(self, outcome):
