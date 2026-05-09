@@ -43,10 +43,10 @@ class Pairs(Bet):
 
     def payout(self):
         if self.result == "win" and self.type == "pp":
-            return int(self.value * 7)
-        if self.result == "win" and self.type == "mp":
-            return int(self.value * 13)
-        if self.result == "win" and self.type == "cp":
             return int(self.value * 31)
+        if self.result == "win" and self.type == "mp":
+            return int(self.value * 6)
+        if self.result == "win" and self.type == "cp":
+            return int(self.value * 11)
         else:
             return 0
