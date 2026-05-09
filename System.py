@@ -34,6 +34,7 @@ def main():
     #Ask for optional pre bet
         for player in players:
 #dealer deals everyone 2 cards
+    #error handling
             response = input("Any sidebets?"
             "  Respond with [Perfect Pairs] or [Mixed Pairs] or [Colored Pairs]\n")
             if response.lower()=="perfect pairs":
@@ -84,10 +85,11 @@ def main():
 #Dealer compares their hand to players and decides who wins and side bets
     #Side Bet implementation
         for player in players:
-            bet2 = player.bets[1]
-            bet2.resolve(player.decidePair(player.hand, bet2.type))
-            player.wallet += bet2.payout()
-            print("Your Pair bet won!\n")
+            if len(player.bets > 1):
+                bet2 = player.bets[1]
+                bet2.resolve(player.decidePair(player.hand, bet2.type))
+                player.wallet += bet2.payout()
+                print("Your Pair bet won!\n")
             
             bet = player.bets[0]
             bet.resolve(player.decide(player.hand, dealer))

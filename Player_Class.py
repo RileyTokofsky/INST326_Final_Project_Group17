@@ -133,17 +133,17 @@ class Player:
             return "push"
         
     def decidePair(self, arg_hand, type) -> str:
-        if (self.arg_hand[0].rank == self.arg_hand[1].rank and 
-            self.arg_hand[0].suit == self.arg_hand[1].suit and type == "pp"):
+        if (arg_hand[0].rank == arg_hand[1].rank and 
+            arg_hand[0].suit == arg_hand[1].suit and type == "pp"):
             return "win"
-        elif (self.arg_hand[0].rank == self.arg_hand[1].rank and (
-            (self.arg_hand[0].suit == "Spades" or self.arg_hand[0].suit == "Clubs") and
-            (self.arg_hand[1].suit == "Spades" or self.arg_hand[1].suit == "Clubs" )
+        elif (arg_hand[0].rank == arg_hand[1].rank and (
+            (arg_hand[0].suit == "Spades" or arg_hand[0].suit == "Clubs") and
+            (arg_hand[1].suit == "Spades" or arg_hand[1].suit == "Clubs" )
             ) or (
-            (self.arg_hand[0].suit == "Hearts" or self.arg_hand[0].suit == "Diamondss") and
-            (self.arg_hand[1].suit == "Hearts" or self.arg_hand[1].suit == "Diamonds" )
+            (arg_hand[0].suit == "Hearts" or arg_hand[0].suit == "Diamondss") and
+            (arg_hand[1].suit == "Hearts" or arg_hand[1].suit == "Diamonds" )
             ) and type == "cp"):
             return "win"
-        elif (self.arg_hand[0].rank == self.arg_hand[1].rank and type == "mp"):
+        elif (arg_hand[0].rank == arg_hand[1].rank and type == "mp"):
             return "win"
         else: return "lose"
