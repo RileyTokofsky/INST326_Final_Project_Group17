@@ -1,4 +1,4 @@
-from Bet import StandardBet
+from Bet import Pairs, StandardBet
 from Dealer_Class import Dealer
 
 
@@ -27,7 +27,7 @@ class Player:
         self.hand = []
         self.bets = []
     
-    def place_bet(self, amount, type):
+    def place_bet(self, amount):
         """
         Places a bet for the player.
 
@@ -42,7 +42,25 @@ class Player:
         if amount > self.wallet:
             return False
         self.wallet -= amount
-        self.bets.append(type(amount))
+        self.bets.append(StandardBet(amount))
+        return True
+    
+    def place_pair_bet(self, amount, type):
+        """
+        Places a bet for the player.
+
+        Args:
+            amount (int): The amount to bet
+
+        Returns:
+            True if bet is successful, False otherwise
+        
+        Author: Adikari
+        """
+        if amount > self.wallet:
+            return False
+        self.wallet -= amount
+        self.bets.append(Pairs(amount, type))
         return True
     
     def get_hand_value(self, hand):

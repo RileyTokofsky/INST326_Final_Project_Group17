@@ -2,7 +2,6 @@
 from Dealer_Class import Dealer
 from Deck_Class import Deck
 from Player_Class import Player
-from Bet import StandardBet, Pairs
 
 def main():
 #Ask how many players are playing using input()
@@ -29,7 +28,7 @@ def main():
             player.bets = []
             wager = input(f"{player.name}, you have ${player.wallet}.  "
                           "How much money do you want to bet?\n")
-            player.place_bet(int(wager), StandardBet)
+            player.place_bet(int(wager))
 #everyone must bet
     #Ask for optional pre bet
         for player in players:
@@ -39,15 +38,15 @@ def main():
             "  Respond with [Perfect Pairs] or [Mixed Pairs] or [Colored Pairs]\n")
             if response.lower()=="perfect pairs":
                 response.lower = input("how much?\n")
-                player.bets.append(Pairs(int(response), "pp"))
+                player.place_pair_bet(response, "pp")
                 
             elif response.lower() == "mixed pairs":
                 response.lower = input("how much?\n")
-                player.bets.append(Pairs(int(response), "mp"))
+                player.place_pair_bet(response, "mp")
                 
             elif response.lower() == "colored pairs":
                 response.lower = input("how much?\n")
-                player.bets.append(Pairs(int(response), "cp"))
+                player.place_pair_bet(response, "cp")
                 
             player.hand.append(deck.deal_card())
             player.hand.append(deck.deal_card())
