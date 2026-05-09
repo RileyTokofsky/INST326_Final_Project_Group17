@@ -35,7 +35,7 @@ def main():
 #dealer deals everyone 2 cards
     #error handling
             response = input("Any sidebets?"
-            "  Respond with [Perfect Pairs] or [Mixed Pairs] or [Colored Pairs]\n")
+            "  Respond with [pp] for Perfect Pairs or [mp] for Mixed Pairs or [cp] for Colored Pairs\n")
             if response.lower()=="perfect pairs":
                 value = int(input("how much?\n"))
                 player.place_pair_bet(value, "pp")
