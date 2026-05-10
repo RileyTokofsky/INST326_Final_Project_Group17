@@ -23,6 +23,7 @@ def main():
     dealer = Dealer()
     deck = Deck()
     while len(players) > 0:
+        dealer.hand = []
         for player in players:
             player.hand = []
             player.bets = []
