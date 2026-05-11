@@ -117,8 +117,13 @@ def main():
                 response = ""
                 while player.get_hand_value(player.hand) < 21 and response.lower() != "stand" and response.lower() != "double down":
                     print(player.hand_description(player.hand))
-                    response = input(f"{player.name}, do you want to hit, stand, or double down?"
-                                    "  Respond with [hit] or [stand] or [double down]\n")
+                    response = ""
+                    while response != "hit" and response != "stand" and response != "double down":
+                        response = input(f"{player.name}, do you want to hit, stand, or double down?"
+                     "  Respond with [hit] or [stand] or [double down]\n").lower()
+
+                        if response != "hit" and response != "stand" and response != "double down":
+                            print("Invalid response.\n")
                     if response.lower()=="hit":
                         player.hit(deck)
                     elif response.lower() == "double down":
