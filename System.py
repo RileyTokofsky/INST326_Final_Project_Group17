@@ -63,9 +63,24 @@ def main():
         for player in players:
             player.hand = []
             player.bets = []
-            wager = input(f"{player.name}, you have ${player.wallet}.  "
-                          "How much money do you want to bet?\n")
-            player.place_bet(int(wager))
+            wager = 0
+
+            while wager <= 0 or wager > player.wallet:
+
+                try:
+                    wager = int(input(f"{player.name}, you have ${player.wallet}.  "
+                          "How much money do you want to bet?\n"))
+
+                    if wager > player.wallet:
+                        print("You cannot bet more than your wallet.\n")
+
+                    elif wager <= 0:
+                        print("Bet must be greater than 0.\n")
+
+                except ValueError:
+                    print("Please enter a valid integer.\n")
+
+            player.place_bet(wager)
 #everyone must bet
     #Ask for optional pre bet
         for player in players:
