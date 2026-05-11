@@ -12,7 +12,18 @@ Author: Ama
 def main():
 #Ask how many players are playing using input()
 #   error handling later
-    people = int(input("how many players are playing today?\n"))
+    people = 0
+
+    while people <= 0:
+
+        try:
+            people = int(input("how many players are playing today?\n"))
+
+            if people <= 0:
+                print("Please enter a valid number.\n")
+
+        except ValueError:
+            print("Please enter a valid integer.\n")
     num = 0
     players = []
 #Loop up to number of players to create player objects
@@ -27,8 +38,12 @@ def main():
     #error handling with not enough money
     print("We'll now start betting\n")
     dealer = Dealer()
-    deck = Deck()
+
     while len(players) > 0:
+
+        # reshuffle deck between rounds
+        deck = Deck()
+
         dealer.hand = []
         for player in players:
             player.hand = []
