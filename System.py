@@ -3,6 +3,12 @@ from Dealer_Class import Dealer
 from Deck_Class import Deck
 from Player_Class import Player
 
+"""
+Purpose: plays the blackjack game
+Arguments: none
+Returns: none
+Author: Ama
+"""
 def main():
 #Ask how many players are playing using input()
 #   error handling later
