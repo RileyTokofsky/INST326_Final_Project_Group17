@@ -85,7 +85,7 @@ class Player:
     
     def hand_description(self, hand):
         """
-        Purpose: returns a strinf description of the song
+        Purpose: returns a string description of the hand
         Arguments: hand as a list of cards
         Returns: string representing information about the player and their hand
         Author: Ama

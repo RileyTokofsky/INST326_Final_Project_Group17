@@ -45,6 +45,12 @@ class Dealer:
         return total
     
     def hand_description(self):
+        """
+        Purpose: returns a string description of the hand
+        Arguments: none
+        Returns: string representing information about the dealer's hand
+        Author: Ama
+        """
         description = f"The house has a "
         for card in self.hand:
             description+= f"{card} and "
