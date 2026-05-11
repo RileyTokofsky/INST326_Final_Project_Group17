@@ -47,11 +47,11 @@ class Pairs(Bet):
         
     def resolve(self, outcome):
         """
-        Purpose: plays the blackjack game
-        Arguments: none
-        Returns: none
-        Author: Ama
-        """
+    Purpose: plays the blackjack game
+    Arguments: none
+    Returns: none
+    Author: Ama
+    """
         self.result = outcome
 
     def payout(self):
