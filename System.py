@@ -28,12 +28,27 @@ def main():
     players = []
 #Loop up to number of players to create player objects
     #error handling later
-    while num < people:
-        response = input("tell us your name and how much money you brought to"
+    money = 0
+
+    while money <= 0:
+
+        try:
+            response = input("tell us your name and how much money you brought to"
                          " the table in the format of [name,money]\n")
-        response = response.split(",")
-        players.append(Player(response[0].lower().strip(" "), int(response[1].strip(" "))))
-        num+=1
+
+            response = response.split(",")
+
+            name = response[0].lower().strip(" ")
+            money = int(response[1].strip(" "))
+
+            if money <= 0:
+                print("Money must be greater than 0.\n")
+
+        except:
+            print("Use the format [name,money]\n")
+
+    players.append(Player(name, money))
+    num+=1
 #Start loop for game until each player says end when asked to bet
     #error handling with not enough money
     print("We'll now start betting\n")
