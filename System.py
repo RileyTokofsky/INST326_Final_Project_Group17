@@ -158,10 +158,17 @@ def main():
             player.wallet += bet.payout()
 #Ask which players want to keep playing
         for player in players[:]:
-            response = input(f"{player.name}, "
-                             "do you want to keep playing? Yes or No\n").lower()
-            if response == "no":
-                players = [one for one in players if one.name != player.name]
+            response = ""
+
+            while response != "yes" and response != "no":
+
+                response = input(f"{player.name}, "
+                     "do you want to keep playing? Yes or No\n").lower()
+
+                if response != "yes" and response != "no":
+                    print("Please respond with Yes or No.\n")
+                if response == "no":
+                    players = [one for one in players if one.name != player.name]
 #Thank you
     print("Thank You for playing!")
     
