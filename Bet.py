@@ -55,6 +55,12 @@ class Pairs(Bet):
         self.result = outcome
 
     def payout(self):
+        """
+        Purpose: pays out winnings to pair betters
+        Arguments: none
+        Returns: pay out depending on whether you won or lost
+        Author: Ama
+        """
         if self.result == "win" and self.type == "pp":
             return int(self.value * 31)
         if self.result == "win" and self.type == "mp":
