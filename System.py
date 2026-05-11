@@ -6,7 +6,18 @@ from Player_Class import Player
 def main():
 #Ask how many players are playing using input()
 #   error handling later
-    people = int(input("how many players are playing today?\n"))
+    people = 0
+
+    while people <= 0:
+
+        try:
+            people = int(input("how many players are playing today?\n"))
+
+            if people <= 0:
+                print("Please enter a valid number.\n")
+
+        except ValueError:
+            print("Please enter a valid integer.\n")
     num = 0
     players = []
 #Loop up to number of players to create player objects
