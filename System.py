@@ -77,10 +77,10 @@ def main():
                     elif wager <= 0:
                         print("Bet must be greater than 0.\n")
 
-                    except ValueError:
-                        print("Please enter a valid integer.\n")
+                except ValueError:
+                    print("Please enter a valid integer.\n")
 
-player.place_bet(wager)
+            player.place_bet(wager)
 #everyone must bet
     #Ask for optional pre bet
         for player in players:
