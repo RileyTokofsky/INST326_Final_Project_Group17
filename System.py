@@ -21,8 +21,12 @@ def main():
     #error handling with not enough money
     print("We'll now start betting\n")
     dealer = Dealer()
-    deck = Deck()
+
     while len(players) > 0:
+
+        # reshuffle deck between rounds
+        deck = Deck()
+
         dealer.hand = []
         for player in players:
             player.hand = []
