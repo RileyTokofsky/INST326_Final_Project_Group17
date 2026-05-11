@@ -35,10 +35,23 @@ class StandardBet(Bet):
     
 class Pairs(Bet):
     def __init__(self, value, type):
+        """
+        Purpose: constructor for pair bet class
+        Arguments: value as how much you want to bet, type as the type of pair
+            bet
+        Returns: none
+        Author: Ama
+        """
         super().__init__(value)
         self.type = type
         
     def resolve(self, outcome):
+        """
+        Purpose: plays the blackjack game
+        Arguments: none
+        Returns: none
+        Author: Ama
+        """
         self.result = outcome
 
     def payout(self):

@@ -64,6 +64,12 @@ class Player:
         return True
     
     def get_hand_value(self, hand):
+        """
+        Purpose: returns the value a player's hand
+        Arguments: hand as a list of cards
+        Returns: total value of the hand
+        Author: Ama
+        """
         total = 0
         aces = 0
         
@@ -78,6 +84,12 @@ class Player:
         return total
     
     def hand_description(self, hand):
+        """
+        Purpose: returns a strinf description of the song
+        Arguments: hand as a list of cards
+        Returns: string representing information about the player and their hand
+        Author: Ama
+        """
         description = f"{self.name} has a "
         for card in hand:
             description+= f"{card} and "
@@ -114,6 +126,12 @@ class Player:
         pass
     
     def double_down(self, bet):
+        """
+        Purpose: doubles the value of a player's bet, "doubling down"
+        Arguments: standard bet that you want to double down
+        Returns: none
+        Author: Ama
+        """
         self.wallet-= bet.value
         bet.value*= 2
         
@@ -122,6 +140,13 @@ class Player:
         pass
     
     def decide(self, arg_hand, dealer: Dealer) -> str:
+        """
+        Purpose: decides the outcome of a player's standard bet
+        Arguments: arg_hand as a hand you want to decide the outcome of,
+            dealer that you're comparing your hand to
+        Returns: string representing the outcome of your bet
+        Author: Ama
+        """
         if self.get_hand_value(arg_hand) > 21:
             return "bust"
     #21 point tie rules
@@ -151,6 +176,13 @@ class Player:
             return "push"
         
     def decidePair(self, arg_hand, type) -> str:
+        """
+        Purpose: decides the outcome of a player's pair bet
+        Arguments: arg_hand as a hand you want to decide the outcome of,
+            type as the type of pair bet you had
+        Returns: string representing the outcome of your bet
+        Author: Ama
+        """
         if (arg_hand[0].rank == arg_hand[1].rank and 
             arg_hand[0].suit == arg_hand[1].suit and type == "pp"):
             return "win"
