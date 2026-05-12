@@ -4,20 +4,41 @@ class Dealer:
         """
         Purpose: Initialize a Dealer object with an empty hand
         
+        Args:
+            None
+
+        Returns:
+            None
+        
         author: Sophia
         """
         self.hand = []
     
     def deal_to_self(self, deck):
         """
+        Purpose: Deals one card from the deck and adds it to the dealer's hand
+        
+        Args:
+            deck (Deck): The deck object used to deal cards
+
+        Returns:
+            None
+            
         author: Sophia
         """
         card = deck.deal_card()
         self.hand.append(card)
     
-    #I forgot to use this method.  Do y'all think we should use it instead?
     def show_hand(self, reveal_all=False):
         """
+        Purpose: Returns the dealer's hand, optionally hiding the first card
+
+        Args:
+            reveal_all: If True, shows all cards in hand, if False, hides the first card
+
+        Returns:
+            A list of tuples representing cards in the hand, or a partially hidden representation
+        
         author: Sophia
         """
         if reveal_all:
@@ -29,6 +50,15 @@ class Dealer:
     
     def get_hand_value(self):
         """
+        Purpose: Calculates the total value of the dealer's hand,
+             adjusting for Aces if needed
+
+        Args:
+            None
+
+        Returns:
+            Total value of the dealer's hand
+                  
         author: Sophia
         """
         total = 0
@@ -59,12 +89,31 @@ class Dealer:
     
     def play_turn(self, deck):
         """
+        Purpose: Automates the dealer's turn by drawing cards until reaching 17 or higher
+
+        Args:
+            deck (Deck): The deck object used to deal cards
+
+        Returns:
+            None
+            
         author: Sophia
         """
         while self.get_hand_value() < 17:
             self.deal_to_self(deck)
         
     def reset_hand(self):
+        """
+        Purpose: Clears the dealer's hand for a new round
+
+        Args:
+            None
+
+        Returns:
+            None
+            
+        author: Sophia 
+        """
         self.hand = []
 
 
