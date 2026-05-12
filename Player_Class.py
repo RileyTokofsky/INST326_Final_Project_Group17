@@ -26,6 +26,7 @@ class Player:
         self.wallet = wallet
         self.hand = []
         self.bets = []
+        self.insurance_bet = None
     
     def place_bet(self, amount):
         """
@@ -111,34 +112,71 @@ class Player:
         card = deck.deal_card()
         self.hand.append(card)
     
-    def stand(self):
-        """
-        Ends the player's turn.
-
-        Args:
-            None
-
-        Returns:
-            None
-        
-        Author: Adikari
-        """
-        pass
     
     def double_down(self, bet):
         """
         Purpose: doubles the value of a player's bet, "doubling down"
         Arguments: standard bet that you want to double down
         Returns: none
-        Author: Ama
+        Authors: Ama, Adikari
         """
-        self.wallet-= bet.value
-        bet.value*= 2
+        if len(self.hand) != 2:
+            return False
+
+        if bet is None:
+            return False
+
+        if self.wallet < bet.value:
+            return False
+
+        self.wallet -= bet.value
+        bet.value *= 2
+
+        return True
         
     
-    def insure(self, hand):
-        pass
+    def insure(self, amount):
+        """
+        Places an insurance bet.
+
+        Args:
+        amount (int): insurance amount
+
+        Returns:
+        bool
+
+        Author: Adikari
+        """
+        if amount > self.wallet:
+            return False
+
+        self.wallet -= amount
+        self.insurance_bet = StandardBet(amount)
+        return True
     
+    def resolve_insurance(self, dealer_has_blackjack):
+        """
+        Resolves insurance bet after dealer reveal.
+        
+        Args:
+            dealer_has_blackjack: Whether dealer has blackjack
+
+        Returns:
+            None
+
+        Author: Adikari
+        """
+        if self.insurance_bet is None:
+            return
+
+        if dealer_has_blackjack:
+            self.insurance_bet.resolve("win")
+        else:
+            self.insurance_bet.resolve("loss")
+
+        self.wallet += self.insurance_bet.payout()
+        self.insurance_bet = None
+        
     def decide(self, arg_hand, dealer: Dealer) -> str:
         """
         Purpose: decides the outcome of a player's standard bet
@@ -178,22 +216,38 @@ class Player:
     def decidePair(self, arg_hand, type) -> str:
         """
         Purpose: decides the outcome of a player's pair bet
-        Arguments: arg_hand as a hand you want to decide the outcome of,
-            type as the type of pair bet you had
-        Returns: string representing the outcome of your bet
-        Author: Ama
+        Arguments: arg_hand (list of cards), type (str) = pp, mp, cp
+        Returns: "win" or "lose"
+        Authors: Ama, Adikari
         """
-        if (arg_hand[0].rank == arg_hand[1].rank and 
-            arg_hand[0].suit == arg_hand[1].suit and type == "pp"):
+        if len(arg_hand) < 2:
+            return "lose"
+
+        card1 = arg_hand[0]
+        card2 = arg_hand[1]
+
+        same_rank = card1.rank == card2.rank
+
+        if not same_rank:
+            return "lose"
+
+        if type == "pp":
+            if card1.suit == card2.suit:
+                return "win"
+            return "lose"
+
+        elif type == "cp":
+            red_suits = {"Hearts", "Diamonds"}
+            black_suits = {"Spades", "Clubs"}
+
+            if (
+                (card1.suit in red_suits and card2.suit in red_suits)
+                or (card1.suit in black_suits and card2.suit in black_suits)
+            ):
+                return "win"
+            return "lose"
+
+        elif type == "mp":
             return "win"
-        elif (arg_hand[0].rank == arg_hand[1].rank and (
-            (arg_hand[0].suit == "Spades" or arg_hand[0].suit == "Clubs") and
-            (arg_hand[1].suit == "Spades" or arg_hand[1].suit == "Clubs" )
-            ) or (
-            (arg_hand[0].suit == "Hearts" or arg_hand[0].suit == "Diamondss") and
-            (arg_hand[1].suit == "Hearts" or arg_hand[1].suit == "Diamonds" )
-            ) and type == "cp"):
-            return "win"
-        elif (arg_hand[0].rank == arg_hand[1].rank and type == "mp"):
-            return "win"
-        else: return "lose"
+
+        return "lose"
