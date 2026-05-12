@@ -98,7 +98,6 @@ def main():
                 
             player.hand.append(deck.deal_card())
             player.hand.append(deck.deal_card())
-            print(f"\n\n{player.hand_description(player.hand)}")
 #dealer deals himself 1 card
         dealer.deal_to_self(deck)
         print(f"The dealer has a {dealer.hand[0]}\n")
