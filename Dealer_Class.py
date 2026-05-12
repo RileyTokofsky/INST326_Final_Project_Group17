@@ -23,7 +23,7 @@ class Dealer:
         if reveal_all:
             return [(card.rank, card.suit) for card in self.hand]
         else:
-            if len(self.hand) > 0:
+            if len(self.hand) > 1:
                 return [("Hidden"), (self.hand[1].rank, self.hand[1].suit)]
             return []
     
