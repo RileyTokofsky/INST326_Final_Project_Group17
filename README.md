@@ -30,6 +30,6 @@ How They Work and Which Are Worth It. (2025, November 5). WinStar World Casino a
 | N/A                    | Michael Ama      | N/A |
 | N/A                    | Sophia Pandey    | N/A |
 | N/A                    | Sophia Pandey    | N/A |
-| N/A                    | Riley Tokofsky   | N/A |
-| N/A                    | Riley Tokofsky   | N/A |
+| Deck - __init__()      | Riley Tokofsky   | optional parameters |
+| Deck.build_deck()      | Riley Tokofsky   | composition of two custom classes|
 
