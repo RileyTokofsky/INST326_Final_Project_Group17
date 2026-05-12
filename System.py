@@ -14,7 +14,7 @@ def main():
 #   error handling later
     people = 0
 
-    while people <= 0:
+    while people <= 0 or people >= 8:
 
         try:
             people = int(input("how many players are playing today?\n"))
@@ -22,7 +22,7 @@ def main():
             if people <= 0:
                 print("Please enter a valid number.\n")
                 
-            if people >= 8:
+            elif people >= 8:
                 print("There are only 8 seats at the table.\n")
 
         except ValueError:
