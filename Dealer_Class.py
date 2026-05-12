@@ -49,9 +49,9 @@ class Dealer:
         Purpose: returns a string description of the hand
         Arguments: none
         Returns: string representing information about the dealer's hand
-        Author: Ama
+        Author: Sophia
         """
-        description = f"The house has a "
+        description = f"The house has {'an empty hand' if len(self.hand) == 0 else ''}"
         for card in self.hand:
             description+= f"{card} and "
         description = description[:-4] + f"\nThe total value is {self.get_hand_value()} points!\n"
