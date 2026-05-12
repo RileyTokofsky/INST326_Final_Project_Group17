@@ -12,6 +12,9 @@ Deck_Class: Represents one or more shuffled decks of standard playing cards. Thi
 
 Player_Class: Represents the player in the game. This class manages the player’s hand, betting actions, and decisions such as hit or stand. It also calculates the player’s score and determines whether the player has won, lost, or busted during a round.
 
+Clear instructions on how to run your program from the command line. 
+Clear instructions on how to use your program and/or interpret the output of the program. In such instructions, you need to explain anything the user might encounter while using your program that a random person on the street would not find self-explanatory.
+
 
 Annotated bibliography:
 This source was used to understand the official rules of Blackjack, including player actions such as hit, stand, and double down. It helped guide the logic implemented in the Player and Dealer classes: 

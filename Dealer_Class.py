@@ -104,7 +104,7 @@ class Dealer:
         
     def reset_hand(self):
         """
-        Purpose: Clears the dealer's hand for a new round
+        Purpose: Clears the dealers hand for a new round
 
         Args:
             None
