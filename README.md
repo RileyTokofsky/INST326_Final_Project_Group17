@@ -19,3 +19,17 @@ Bicycle. (2025). Blackjack. Bicyclecards.com. https://bicyclecards.com/how-to-pl
 
 This source helped with understanding how to structure classes in Python, which was needed for implementing the Card, Deck, Player, and Dealer classes.: 
 How They Work and Which Are Worth It. (2025, November 5). WinStar World Casino and Resort. https://www.winstar.com/blog/blackjack-side-bets-guide-how-they-work-and-which-are-worth-it/
+
+## Attribution Table
+
+| Method/Function        | Primary Author   | Technique Claimed |
+|------------------------|------------------|-------------------|
+| N/A                    | Nadisha Adikari  | N/A |
+| N/A                    | Nadisha Adikari  | N/A |
+| N/A                    | Michael Ama      | N/A |
+| N/A                    | Michael Ama      | N/A |
+| N/A                    | Sophia Pandey    | N/A |
+| N/A                    | Sophia Pandey    | N/A |
+| N/A                    | Riley Tokofsky   | N/A |
+| N/A                    | Riley Tokofsky   | N/A |
+
