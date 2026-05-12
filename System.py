@@ -21,6 +21,9 @@ def main():
 
             if people <= 0:
                 print("Please enter a valid number.\n")
+                
+            if people >= 8:
+                print("There are only 8 seats at the table.\n")
 
         except ValueError:
             print("Please enter a valid integer.\n")
