@@ -50,5 +50,5 @@ How They Work and Which Are Worth It. (2025, November 5). WinStar World Casino a
 | Pairs.__init__         | Michael Ama      | 10. super() |
 | Dealer.hand_description| Sophia Pandey    | 3. F-strings containing expressions |
 | Dealer.play_turn       | Sophia Pandey    | N/A |
-| Dealer.show_hand       | Riley Tokofsky   | N/A |
+| Deck.build_deck        | Riley Tokofsky   | N/A |
 | Deck.__init__          | Riley Tokofsky   | 2. Optional parameters and/or keyword arguments |
