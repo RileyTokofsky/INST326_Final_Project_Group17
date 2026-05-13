@@ -16,6 +16,7 @@ Player_Class: Represents the player in the game. This class manages the playerâ€
 Instructions:
 To run the Blackjack program, make sure all of the files are in the same folder. This includes the Bet.py, Card_Class.py, Dealer_Class.py, Deck_Class.py, Player_Class.py, and the System.py. Open a command prompt and navigate to the project folder. To run the program you can type python System.py. The game will then start in the terminal window.
 
+How to use: 
 When the game begins the program asks how many players are playing. Each player enters their name and money. Players place bets at the start of each round and also choose their side bets. After the cards are dealt, players can choose to hit, stand, or double down. The program shows each player's cards and total hand value during the round. If a players total goes over 21 points they bust. After all players finish their turns the dealer plays and bets are resolved then players can choose whether to continue playing or end the game.
 
 All input is entered through the terminal using the keyboard. There are no buttons or graphical interface elements. When prompted for bets or decisions, users must enter valid inputs exactly as shown below:
