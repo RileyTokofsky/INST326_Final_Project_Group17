@@ -29,11 +29,11 @@ How They Work and Which Are Worth It. (2025, November 5). WinStar World Casino a
 
 | Method/Function        | Primary Author   | Technique Claimed |
 |------------------------|------------------|-------------------|
-| Player.decidePair      | Nadisha Adikari  | 7. Set operations |
+| Player.decide          | Nadisha Adikari  | 1. Conditional expressions |
 | Player.place_bet       | Nadisha Adikari  | 11. Composition of two custom classes |
 | Card.__add__           | Michael Ama      | 14. Magic methods other than __init__() |
 | Pairs.__init__         | Michael Ama      | 10. super() |
 | Dealer.hand_description| Sophia Pandey    | 3. F-strings containing expressions |
-| Dealer.play_turn       | Sophia Pandey    | 1. conditional expressions |
-| Dealer.show_hand       | Riley Tokofsky   | 6. Sequence unpacking |
+| Dealer.play_turn       | Sophia Pandey    | N/A |
+| Dealer.show_hand       | Riley Tokofsky   | N/A |
 | Deck.__init__          | Riley Tokofsky   | 2. Optional parameters and/or keyword arguments |

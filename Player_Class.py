@@ -183,34 +183,36 @@ class Player:
         Arguments: arg_hand as a hand you want to decide the outcome of,
             dealer that you're comparing your hand to
         Returns: string representing the outcome of your bet
-        Author: Ama
+        Authors: Ama, Adikari
         """
-        if self.get_hand_value(arg_hand) > 21:
+        player_value = self.get_hand_value(arg_hand)
+        status = "bust" if player_value > 21 else "continue"
+        if status == "bust":
             return "bust"
     #21 point tie rules
-        elif (self.get_hand_value(arg_hand) == 21 and len(arg_hand) == 2
+        elif (player_value == 21 and len(arg_hand) == 2
             and dealer.get_hand_value() == 21 and len(dealer.hand) == 2):
             return "push"
-        elif (self.get_hand_value(arg_hand) == 21 and len(arg_hand) != 2
-            and dealer.get_hand_value() == 21 and len(dealer.hand)!= 2):
+        elif (player_value == 21 and len(arg_hand) != 2
+            and dealer.get_hand_value() == 21 and len(dealer.hand) != 2):
             return "push"
-        elif (self.get_hand_value(arg_hand) == 21 and len(arg_hand) == 2
+        elif (player_value == 21 and len(arg_hand) == 2
             and dealer.get_hand_value() == 21 and len(dealer.hand) != 2):
             return "blackjack"
-        elif (self.get_hand_value(arg_hand) == 21 and len(arg_hand) != 2
-            and dealer.get_hand_value() == 21 and len(dealer.hand)== 2):
+        elif (player_value == 21 and len(arg_hand) != 2
+            and dealer.get_hand_value() == 21 and len(dealer.hand) == 2):
             return "loss"
     #Other rules
-        elif (self.get_hand_value(arg_hand) == 21 and len(arg_hand) == 2
+        elif (player_value == 21 and len(arg_hand) == 2
             and dealer.get_hand_value() != 21):
             return "blackjack"
-        elif self.get_hand_value(arg_hand) < 21 and dealer.get_hand_value() > 21:
+        elif player_value < 21 and dealer.get_hand_value() > 21:
             return "win"
-        elif self.get_hand_value(arg_hand) < dealer.get_hand_value():
+        elif player_value < dealer.get_hand_value():
             return "loss"
-        elif self.get_hand_value(arg_hand) > dealer.get_hand_value():
+        elif player_value > dealer.get_hand_value():
             return "win"
-        elif self.get_hand_value(arg_hand) == dealer.get_hand_value():
+        elif player_value == dealer.get_hand_value():
             return "push"
         
     def decidePair(self, arg_hand, type) -> str:
