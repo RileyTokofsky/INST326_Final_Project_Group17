@@ -14,9 +14,23 @@ Player_Class: Represents the player in the game. This class manages the playerâ€
 
 
 Instructions:
-To run the Blackjack program, make sure all of the files are in the same folder. This includes the Bet.py, Card_Class.py, Dealer_Class.py, Deck_Class.py, Player_Class.py, and the System.py. Open a command prompt andnavigate to the project folder. To run the program you can type python System.py. The game will then start in the terminal window.
+To run the Blackjack program, make sure all of the files are in the same folder. This includes the Bet.py, Card_Class.py, Dealer_Class.py, Deck_Class.py, Player_Class.py, and the System.py. Open a command prompt and navigate to the project folder. To run the program you can type python System.py. The game will then start in the terminal window.
 
-When the game begins the program asks how many players are playing. Each player enters their name and money. Players place bets at the start of each round and also choose their side bets. After the cards are dealt, players can choose to hit, stand, or double down. The program shows each players cards and total hand value during the round. If a players total goes over 21 points they bust. After all players finish their turns the dealer plays and bets are resolved then players can choose whether to continue playing or end the game.
+When the game begins the program asks how many players are playing. Each player enters their name and money. Players place bets at the start of each round and also choose their side bets. After the cards are dealt, players can choose to hit, stand, or double down. The program shows each player's cards and total hand value during the round. If a players total goes over 21 points they bust. After all players finish their turns the dealer plays and bets are resolved then players can choose whether to continue playing or end the game.
+
+All input is entered through the terminal using the keyboard. There are no buttons or graphical interface elements. When prompted for bets or decisions, users must enter valid inputs exactly as shown below:
+Side bets must be entered as:
+pp = Perfect Pairs
+mp = Mixed Pairs
+cp = Colored Pairs
+Any other input is treated as invalid and the side bet will not be placed.
+
+For main gameplay decisions, players must type:
+hit to receive another card
+stand to end their turn
+double down to double their bet and take one final card
+
+If a player enters an invalid response, the program will prompt them again until a valid input is provided. If a player chooses not to place a side bet, they can simply press Enter or type anything other than pp, mp, or cp. The game runs entirely in the command-line terminal and does not require any external windows or interfaces.
 
 Annotated bibliography:
 This source was used to understand the official rules of Blackjack, including player actions such as hit, stand, and double down. It helped guide the logic implemented in the Player and Dealer classes: 
