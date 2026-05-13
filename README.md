@@ -12,9 +12,11 @@ Deck_Class: Represents one or more shuffled decks of standard playing cards. Thi
 
 Player_Class: Represents the player in the game. This class manages the player’s hand, betting actions, and decisions such as hit or stand. It also calculates the player’s score and determines whether the player has won, lost, or busted during a round.
 
-Clear instructions on how to run your program from the command line. 
-Clear instructions on how to use your program and/or interpret the output of the program. In such instructions, you need to explain anything the user might encounter while using your program that a random person on the street would not find self-explanatory.
 
+Instructions:
+To run the Blackjack program, make sure all of the files are in the same folder. This includes the Bet.py, Card_Class.py, Dealer_Class.py, Deck_Class.py, Player_Class.py, and the System.py. Open a command prompt andnavigate to the project folder. To run the program you can type python System.py. The game will then start in the terminal window.
+
+When the game begins, the program asks how many players are playing. Each player then enters their name and starting money in the format name,money. Players place bets at the start of each round and also choose their side bets. After the cards are dealt, players can choose to hit, stand, or double down. The program displays each player’s cards and total hand value during the round. If a player’s total goes over 21 points, they bust. After all players finish their turns, the dealer plays, bets are resolved, and players can choose whether to continue playing or end the game.
 
 Annotated bibliography:
 This source was used to understand the official rules of Blackjack, including player actions such as hit, stand, and double down. It helped guide the logic implemented in the Player and Dealer classes: 
