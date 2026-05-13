@@ -46,7 +46,7 @@ How They Work and Which Are Worth It. (2025, November 5). WinStar World Casino a
 |------------------------|------------------|-------------------|
 | Player.decide          | Nadisha Adikari  | 1. Conditional expressions |
 | Player.place_bet       | Nadisha Adikari  | 11. Composition of two custom classes |
-| Card.__add__           | Michael Ama      | 14. Magic methods other than __init__() |
+| main()                 | Michael Ama      | 8. List comprehension |
 | Pairs.__init__         | Michael Ama      | 10. super() |
 | Dealer.hand_description| Sophia Pandey    | 3. F-strings containing expressions |
 | Dealer.play_turn       | Sophia Pandey    | N/A |
