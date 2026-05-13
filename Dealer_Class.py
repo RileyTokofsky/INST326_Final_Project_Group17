@@ -39,7 +39,7 @@ class Dealer:
         Returns:
             A list of tuples representing cards in the hand, or a partially hidden representation
         
-        author: Riley
+        author: sophia
         """
         if reveal_all:
             return [(card.rank, card.suit) for card in self.hand]
